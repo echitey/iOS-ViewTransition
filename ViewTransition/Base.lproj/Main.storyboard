@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ViewTransition" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,75 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hd-3b-aPw">
+                                <rect key="frame" x="10" y="126" width="355" height="531"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="front" translatesAutoresizingMaskIntoConstraints="NO" id="uLn-fV-9yq">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="531"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="Hyo-t3-txb">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="531"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2W-b2-F9P">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="531"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="flipCardWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PVZ-3g-VZd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="uLn-fV-9yq" firstAttribute="top" secondItem="1hd-3b-aPw" secondAttribute="top" id="A9e-vj-JSX"/>
+                                    <constraint firstItem="Hyo-t3-txb" firstAttribute="top" secondItem="1hd-3b-aPw" secondAttribute="top" id="E3g-ER-tQY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hyo-t3-txb" secondAttribute="trailing" id="OcB-C3-5hL"/>
+                                    <constraint firstAttribute="bottom" secondItem="E2W-b2-F9P" secondAttribute="bottom" id="Ph9-8T-7EW"/>
+                                    <constraint firstItem="E2W-b2-F9P" firstAttribute="leading" secondItem="1hd-3b-aPw" secondAttribute="leading" id="Rfi-52-kxz"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hyo-t3-txb" secondAttribute="bottom" id="Soy-Rh-sdZ"/>
+                                    <constraint firstItem="E2W-b2-F9P" firstAttribute="top" secondItem="1hd-3b-aPw" secondAttribute="top" id="VRA-OT-5hI"/>
+                                    <constraint firstItem="Hyo-t3-txb" firstAttribute="leading" secondItem="1hd-3b-aPw" secondAttribute="leading" id="aUu-ob-13R"/>
+                                    <constraint firstAttribute="bottom" secondItem="uLn-fV-9yq" secondAttribute="bottom" id="fo3-FD-zdc"/>
+                                    <constraint firstItem="uLn-fV-9yq" firstAttribute="leading" secondItem="1hd-3b-aPw" secondAttribute="leading" id="oRp-jW-ymz"/>
+                                    <constraint firstAttribute="trailing" secondItem="E2W-b2-F9P" secondAttribute="trailing" id="of8-ol-6Ub"/>
+                                    <constraint firstAttribute="trailing" secondItem="uLn-fV-9yq" secondAttribute="trailing" id="rtk-C3-eM5"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yugilogo" translatesAutoresizingMaskIntoConstraints="NO" id="sbo-WI-fFC">
+                                <rect key="frame" x="44" y="28" width="287" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="cNJ-CM-yHU"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1hd-3b-aPw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="ARw-zK-A0E"/>
+                            <constraint firstItem="sbo-WI-fFC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="fLY-gv-Eqo"/>
+                            <constraint firstItem="sbo-WI-fFC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ihe-rk-rkk"/>
+                            <constraint firstItem="1hd-3b-aPw" firstAttribute="top" secondItem="sbo-WI-fFC" secondAttribute="bottom" constant="8" id="oAy-dO-K8i"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1hd-3b-aPw" secondAttribute="bottom" constant="10" id="qdE-v6-45w"/>
+                            <constraint firstAttribute="trailing" secondItem="1hd-3b-aPw" secondAttribute="trailing" constant="10" id="qgw-fV-bU7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardBack" destination="Hyo-t3-txb" id="QbB-65-N5t"/>
+                        <outlet property="cardFront" destination="uLn-fV-9yq" id="sBT-KA-FjQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="390" height="570"/>
+        <image name="front" width="390" height="570"/>
+        <image name="yugilogo" width="287" height="101"/>
+    </resources>
 </document>

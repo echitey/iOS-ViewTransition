@@ -9,17 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var cardBack: UIImageView!
+    @IBOutlet weak var cardFront: UIImageView!
+    var flipped = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func flipCard(_sender: UIButton){
+        
+        flipped = !flipped
+        
+        let fromView = flipped ? cardBack : cardFront
+        let toView =  flipped ? cardFront : cardBack
+        
+        UIView.transition(from: fromView!, to: toView!, duration: 0.5, options: [.transitionFlipFromTop, .showHideTransitionViews])
     }
-
-
 }
 
